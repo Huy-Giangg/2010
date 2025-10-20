@@ -73,7 +73,7 @@ p {
   margin-top: 40px;
 }
 .bear-img {
-  width: 560px;
+  width: 400px;
   animation: bounce 2s infinite ease-in-out, fadeIn 3s ease-in-out;
 }
 @keyframes bounce {
