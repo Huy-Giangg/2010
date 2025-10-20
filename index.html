@@ -1,31 +1,40 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chúc mừng 20/10 - Dành tặng người phụ nữ tuyệt vời!</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chúc mừng 20/10 💐</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Nhạc nền -->
+  <audio id="bg-music" loop>
+    <source src="love.mp3" type="audio/mpeg">
+  </audio>
 
-    <div id="confetti-canvas"></div> <div class="container">
-        <h1 class="animate__animated animate__zoomIn">💖 Chúc mừng Ngày Phụ nữ Việt Nam 20/10 💖</h1>
+  <!-- Nút nhận quà -->
+  <div id="gift-screen">
+    <h1>💝 Chúc mừng ngày 20/10 💝</h1>
+    <button id="gift-btn">Nhận quà 💖</button>
+  </div>
 
-        <div class="card animate__animated animate__fadeInUp animate__delay-1s">
-            <img src="anh_nguoi_duoc_chuc.jpg" alt="Người phụ nữ tuyệt vời" class="profile-img">
-            <p class="message">
-                Chúc em/mẹ/cô/bạn luôn xinh đẹp, hạnh phúc và rạng rỡ như những đóa hoa. Cảm ơn vì tất cả những điều tuyệt vời em/mẹ/cô/bạn đã làm!
-            </p>
-            <p class="signature">- Tên người gửi -</p>
-        </div>
+  <!-- Nội dung chính -->
+  <div class="container" style="display: none;">
+    <h1>Gửi đến em💐</h1>
+    <p>Chúc em luôn xinh đẹp, hạnh phúc và rạng rỡ như ánh mặt trời 🌷</p>
 
-        <div class="video-section animate__animated animate__fadeInUp animate__delay-2s">
-            <iframe width="560" height="315" src="LINK_VIDEO_YOUTUBE" frameborder="0" allowfullscreen></iframe>
-            </div>
+    <div class="bear-container">
+      <img src="bear-removebg-preview.png" alt="Gấu ôm tim" class="bear-img">
     </div>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.min.js"></script>
-    <script src="script.js"></script>
+  <!-- Hai canvas pháo hoa -->
+  <canvas id="fireworks-left"></canvas>
+  <canvas id="fireworks-right"></canvas>
+
+  <!-- Canvas trái tim bay -->
+  <canvas id="hearts"></canvas>
+
+  <script src="script.js"></script>
 </body>
 </html>

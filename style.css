@@ -1,88 +1,98 @@
-/* Thiết lập chung cho body */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    /* Nền màu gradient hoặc hình nền hoa */
-    background: linear-gradient(to bottom right, #ffdddd, #ffe5e5); 
-    color: #333;
-    display: flex;
-    flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #ffe6f0, #ffd6e0);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+}
+
+/* Màn hình nhận quà */
+#gift-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(180deg, #ffe6f0, #ffd6e0);
+    width: 100vw;
+    height: 100vh;
+    display: flex;              /* Thêm dòng này */
+    flex-direction: column;     /* Thêm dòng này */
+    justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    text-align: center;
-    overflow-x: hidden; /* Tránh thanh cuộn ngang */
 }
 
+
+#gift-screen h1 {
+  color: #ff4081;
+  text-shadow: 0 0 10px white;
+}
+
+#gift-btn {
+  background-color: #ff66b2;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 25px pink;
+  transition: 0.3s;
+}
+#gift-btn:hover {
+  background-color: #ff3385;
+  transform: scale(1.1);
+}
+
+/* Nội dung chính */
 .container {
-    padding: 40px 20px;
-    max-width: 800px;
-    width: 90%;
-    z-index: 10; /* Đảm bảo nội dung nằm trên hiệu ứng Confetti */
+  position: relative;
+  z-index: 10;
+  color: #ff4081;
+  margin-top: 50px;
+  animation: fadeIn 2s ease-in-out;
 }
 
-/* Tiêu đề chính */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 h1 {
-    color: #e91e63; /* Màu hồng đậm lãng mạn */
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 2.2em;
+  text-shadow: 0 0 10px white;
 }
 
-/* Card chứa lời chúc */
-.card {
-    background-color: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    margin-bottom: 30px;
-    border: 3px solid #ff99aa; /* Viền màu hồng nhạt */
+p {
+  font-size: 1.4em;
+  color: #d63384;
+  text-shadow: 0 0 5px #fff0f6;
 }
 
-.profile-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #ffc1e3;
-    margin-bottom: 20px;
+.bear-container {
+  margin-top: 40px;
+}
+.bear-img {
+  width: 560px;
+  animation: bounce 2s infinite ease-in-out, fadeIn 3s ease-in-out;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
 }
 
-.message {
-    font-size: 1.2em;
-    line-height: 1.6;
-    color: #6a0040;
-    font-style: italic;
-    margin: 20px 0;
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
 }
 
-.signature {
-    font-weight: bold;
-    color: #e91e63;
-    font-size: 1.1em;
-}
-
-/* Khu vực Video */
-.video-section {
-    margin-top: 30px;
-}
-
-/* Responsive cho Video */
-.video-section iframe {
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9; /* Giữ tỷ lệ 16:9 */
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Thiết lập cho canvas confetti */
-#confetti-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none; /* Quan trọng: Cho phép click xuyên qua */
-    z-index: 5;
+#fireworks-left, 
+#fireworks-right, 
+#hearts {
+  width: 100vw;
+  height: 100vh;
 }
